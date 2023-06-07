@@ -15,7 +15,7 @@ import java.util.List;
 public class Lugares {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_lugar")
+    @Column(name = "idLugar")
     private Integer idLugar;
 
     @Column(length = 60)

@@ -1,5 +1,6 @@
 package com.softtek.examenejercicio2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,15 +21,16 @@ public class Visitas {
     @Column(name = "f_visita")
     private LocalDate date;
 
-    @ManyToOne
-    @JoinColumn(name = "matricula", nullable = false, foreignKey = @ForeignKey(name = "FK_visita_autobus"))
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JsonIgnore
+    @JoinColumn(name = "matricula", nullable = false, referencedColumnName = "matricula",foreignKey = @ForeignKey(name = "FK_visita_autobus"))
     private Autobuses autobus;
 
-    @ManyToOne
-    @JoinColumn(name = "dni", nullable = false, foreignKey = @ForeignKey(name = "FK_visita_conductor"))
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "dni", nullable = false,referencedColumnName ="dni" ,foreignKey = @ForeignKey(name = "FK_visita_conductor"))
     private Conductores conductor;
 
-    @ManyToOne
-    @JoinColumn(name = "id_lugar", nullable = false, foreignKey = @ForeignKey(name = "FK_visita_lugar"))
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idLugar",referencedColumnName = "idLugar",nullable = false, foreignKey = @ForeignKey(name = "FK_visita_lugar"))
     private Lugares lugar;
 }

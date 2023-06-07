@@ -46,10 +46,8 @@ public class ExamenEjercicio2Application implements CommandLineRunner {
 		autobus2.setAFabricacion(2006);
 
 		Lugares lugar = new Lugares();
-		lugar.setIdLugar(1);
 		lugar.setNombre("Lugar1");
 		Lugares lugar2 = new Lugares();
-		lugar2.setIdLugar(2);
 		lugar2.setNombre("Lugar2");
 
 		Conductores conductor=new Conductores();
@@ -59,14 +57,14 @@ public class ExamenEjercicio2Application implements CommandLineRunner {
 		conductor2.setDni("12345678B");
 		conductor2.setNombre("Conductor2");
 
-		autobusService.createAutobus(autobus);
-		autobusService.createAutobus(autobus2);
-
-		lugaresService.createLugar(lugar);
-		lugaresService.createLugar(lugar2);
-
-		conductoresService.createConductor(conductor);
-		conductoresService.createConductor(conductor2);
+//		autobusService.createAutobus(autobus);
+//		autobusService.createAutobus(autobus2);
+//
+//		lugaresService.createLugar(lugar);
+//		lugaresService.createLugar(lugar2);
+//
+//		conductoresService.createConductor(conductor);
+//		conductoresService.createConductor(conductor2);
 
 
 		Visitas visita = new Visitas();
@@ -75,11 +73,11 @@ public class ExamenEjercicio2Application implements CommandLineRunner {
 		visita.setConductor(conductor);
 		visita.setLugar(lugar);
 
-		Visitas visita2 = new Visitas();
-		visita.setDate(LocalDate.now());
-		visita.setAutobus(autobus2);
-		visita.setConductor(conductor2);
-		visita.setLugar(lugar2);
+//		Visitas visita2 = new Visitas();
+//		visita.setDate(LocalDate.now());
+//		visita.setAutobus(autobus2);
+//		visita.setConductor(conductor2);
+//		visita.setLugar(lugar2);
 
 		visitasService.createVisita(visita);
 
