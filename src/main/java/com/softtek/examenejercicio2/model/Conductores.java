@@ -20,6 +20,4 @@ public class Conductores {
     @Column(length = 60)
     private String nombre;
 
-    @OneToMany(mappedBy = "conductor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Visitas> visitas;
 }

@@ -21,6 +21,4 @@ public class Lugares {
     @Column(length = 60)
     private String nombre;
 
-    @OneToMany(mappedBy = "lugar", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Visitas> visitas;
 }
