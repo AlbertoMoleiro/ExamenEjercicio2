@@ -1,4 +1,4 @@
-package com.lazypostman.authentication.exception;
+package com.softtek.examenejercicio2.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
