@@ -4,10 +4,7 @@ import com.softtek.examenejercicio2.model.Autobuses;
 import com.softtek.examenejercicio2.service.AutobusServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +17,10 @@ public class Controller {
     @GetMapping("/all")
     ResponseEntity<List<Autobuses>> getAll() throws Exception{
         return ResponseEntity.ok(autobusesService.getAll());
+    }
+
+    @GetMapping("/{matricula}")
+    ResponseEntity<Autobuses> getAutobusByMatricula(@PathVariable("matricula") String matricula) throws Exception{
+        return ResponseEntity.ok(autobusesService.getById(matricula));
     }
 }
